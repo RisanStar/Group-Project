@@ -7,9 +7,8 @@ public class PlayerMovement : MonoBehaviour
     private float horizontal;
     private float speed = 8f;
     private float jumpingPower = 10f;
-    private float acceleration = 1.5f;
     private bool isFacingRight = true;
-    private bool isGrounded = true;
+    
 
 
     [SerializeField] private Rigidbody2D rb;
@@ -23,11 +22,11 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("jump") && IsGrounded())
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            rb.AddForce(new Vector2(rb.velocity.x, jumpingPower));
+            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
-         if (Input.GetButtonDown("jump") && rb.velocity.y > 0f)
+         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
@@ -45,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
-            localScale.x = -1f;
+            localScale.x *= -1f;
             transform.localScale = localScale;
 
         }
