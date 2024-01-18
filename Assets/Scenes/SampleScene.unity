@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 61156251}
   - component: {fileID: 61156250}
   - component: {fileID: 61156252}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,14 +292,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 61156247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 461a6bcf728f6504d94b5b31846b4e2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d9b54e7998b9b44e9008cab26ba9cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 61156251}
   groundCheck: {fileID: 770603633}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
 --- !u!1 &262766416
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +341,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 770603633}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 843479663}
   - component: {fileID: 843479664}
   - component: {fileID: 843479665}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
