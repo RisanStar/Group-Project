@@ -5,6 +5,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
     private float speed = 8f;
+    public float FallMultiplier;
+    public float jumMulti;
     private float jumpingPower = 10f;
     private bool isFacingRight = true;
 
@@ -21,6 +23,10 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+        }
+        if (rb.velocity.y < 0f)
+        {
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplier - 1) * Time.deltaTime;
         }
         Flip();
     }

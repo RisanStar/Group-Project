@@ -271,7 +271,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -295,6 +295,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9b54e7998b9b44e9008cab26ba9cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FallMultiplier: 3
+  jumMulti: 2.5
   rb: {fileID: 61156251}
   groundCheck: {fileID: 770603633}
   groundLayer:
