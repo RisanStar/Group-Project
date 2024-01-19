@@ -3,21 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
+    //VARIABLES
     private float vertical;
     private float horizontal;
+
     private float climbingSpeed = 3f;
     private float speed = 4f;
     private float speedMulti = 1.5f;
     private float airSpeedMulti = 1.3f;
+
+    public float maxStamina;
     public float stamina;
+    public float runCost;
+    public float chargeRate;
+    private Coroutine recharge;
+    private float tiredMulti = .5f;
+
     public float FallMultiplier;
     public float jumMulti;
     private float jumpingPower = 10f;
+
+    private bool isTired;
     private bool isRunning;
     private bool isLadder;
     private bool isClimbing;
     private bool isFacingRight = true;
 
+    //REFERENCES
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -32,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f && !isClimbing)
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .5f);
         }
         if (rb.velocity.y < 0f && !isClimbing)
         {
@@ -55,7 +67,28 @@ public class PlayerMovement : MonoBehaviour
         {
             isRunning = false;
         }
+
+        //STAMINA
+        if ((isRunning))
+        {
+            stamina -= runCost * Time.deltaTime;
+            if (recharge != null) StopCoroutine(recharge);
+            recharge = StartCoroutine(rechargeStamina());
+        }
+        if (stamina < 0) stamina = 0;
+        if (stamina == 0)
+        //stamina fill amount should go here
+        {
+            isTired = true;
+        }
+        else
+        {
+            isTired = false;
+        }
+
+        
     }
+
 
     private void FixedUpdate()
     {
@@ -83,7 +116,14 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(horizontal * speed * airSpeedMulti, rb.velocity.y);
         }
 
+        //STAMINA 
+        if (isTired)
+        {
+            rb.velocity = new Vector2(horizontal * speed * tiredMulti, rb.velocity.y);
+        }
     }
+    
+    //DIRECTION
     private void Flip()
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
@@ -98,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
     //GROUND CHECKER
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, .2f, groundLayer);
     }
 
     //CLIMBING COLLISIONS
@@ -118,4 +158,17 @@ public class PlayerMovement : MonoBehaviour
             isClimbing = false;
         }
     }
+
+    private IEnumerator rechargeStamina()
+    {
+        yield return new WaitForSeconds(1f);
+        while (stamina < maxStamina && (!isRunning))
+        {
+            stamina += chargeRate / 10f;
+            if (stamina > maxStamina) stamina = maxStamina;
+            //stamina fill amount should go here
+        }
+        yield return new WaitForSeconds(.1f);
+    }
+
 }
