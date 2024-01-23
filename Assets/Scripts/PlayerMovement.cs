@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 4f;
     private float speedMulti = 1.5f;
     private float airSpeedMulti = 1.3f;
+    private float climpingSpeedMulti = 1.2f;
 
     public float maxStamina;
     public float stamina;
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isRunning;
     private bool isLadder;
     private bool isClimbing;
+    private bool isFastClimbing;
     private bool isFacingRight = true;
 
     //REFERENCES
@@ -57,6 +59,16 @@ public class PlayerMovement : MonoBehaviour
         {
             isClimbing = true;
         }
+        if (isClimbing && (Input.GetKey(KeyCode.LeftShift)))
+        {
+            isFastClimbing = true;
+        }
+        else
+        {
+            isFastClimbing = false;
+        }
+         
+        
 
         //CALCULATING RUNNING INPUT
         if (Input.GetKey(KeyCode.LeftShift))
@@ -69,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //STAMINA
-        if ((isRunning))
+        if ((isRunning && !isFastClimbing))
         {
             stamina -= runCost * Time.deltaTime;
             if (recharge != null) StopCoroutine(recharge);
@@ -104,6 +116,11 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rb.gravityScale = 2f;
+        }
+
+        if (isFastClimbing)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, vertical * climbingSpeed * climpingSpeedMulti);
         }
 
         //RUNNING SPEED  
@@ -167,8 +184,8 @@ public class PlayerMovement : MonoBehaviour
             stamina += chargeRate / 10f;
             if (stamina > maxStamina) stamina = maxStamina;
             //stamina fill amount should go here
+            yield return new WaitForSeconds(.1f);
         }
-        yield return new WaitForSeconds(.1f);
     }
 
 }

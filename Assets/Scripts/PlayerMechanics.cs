@@ -8,28 +8,37 @@ public class PlayerMechanics : MonoBehaviour
 
 {
     private bool pickUpAllowed;
-    public float pickUpTimer = 0f;
+    public float pickUpTimer;
+    private float pickUpCountdown = 0f;
 
-    //PICKUP WITH E
+    private bool canUse;
+
+
+    void Start()
+    {
+        pickUpCountdown = pickUpTimer;
+    }
+    //PICKUP WITH E WITH TIMER
     private void Update()
     {
-        if (pickUpAllowed && Input.GetKeyDown(KeyCode.E))
+        if (pickUpAllowed && Input.GetKey(KeyCode.E))
         {
-            while (Input.GetKeyDown(KeyCode.E))
-                pickUpTimer = pickUpTimer + 1f;
+            pickUpCountdown -= 1f * Time.deltaTime;
         }
+            
+        if (pickUpCountdown <= 0f) { pickUpCountdown = 0f;}
+        if (pickUpCountdown == 0f)
         {
-            if (pickUpTimer > 3f)
-            {
-                Pickup();
-            }
+            Pickup();
+            canUse = true;
         }
+               
     }
 
     //COLLISION WITH ITEM
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Key"))
         {
             pickUpAllowed = true;
         }
@@ -37,7 +46,7 @@ public class PlayerMechanics : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Key"))
         {
             pickUpAllowed = false;
         }
@@ -46,6 +55,6 @@ public class PlayerMechanics : MonoBehaviour
     //PICKUP REFERENCE
     private void Pickup()
     {
-        Destroy(gameObject);
+        Destroy(GameObject.Find("Key"));
     } 
 }
