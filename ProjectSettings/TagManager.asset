@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ladder
   - Key
+  - Door
   layers:
   - Default
   - TransparentFX
