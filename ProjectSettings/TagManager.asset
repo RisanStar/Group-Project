@@ -7,6 +7,8 @@ TagManager:
   - Ladder
   - Key
   - Door
+  - Collider 1
+  - Collider 2
   layers:
   - Default
   - TransparentFX

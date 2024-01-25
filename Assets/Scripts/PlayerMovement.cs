@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
+using UnityEditor.Search;
 using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
@@ -35,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+
     private void Update()
     {
         //CALCULATING JUMPING INPUT
@@ -67,8 +70,6 @@ public class PlayerMovement : MonoBehaviour
         {
             isFastClimbing = false;
         }
-         
-        
 
         //CALCULATING RUNNING INPUT
         if (Input.GetKey(KeyCode.LeftShift))
@@ -97,8 +98,6 @@ public class PlayerMovement : MonoBehaviour
         {
             isTired = false;
         }
-
-        
     }
 
 
