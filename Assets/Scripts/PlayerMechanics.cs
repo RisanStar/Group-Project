@@ -7,21 +7,14 @@ using UnityEngine.UI;
 public class PlayerMechanics : MonoBehaviour
 
 {
+    //VARIABLES
     private bool pickUpAllowed;
     public float Timer;
     private float Count = 0f;
 
-    private bool canUseKey;
-    private bool keyAllowed;
-
-    private float doorSpeed;
-    private int pointsIndex;
-    [SerializeField] Transform[] Points;
-
     void Start()
     {
         Count = Timer;
-        transform.position = Points[pointsIndex].transform.position;
     }
     //PICKUP WITH E WITH TIMER
     private void Update()
@@ -35,18 +28,8 @@ public class PlayerMechanics : MonoBehaviour
         if (Count == 0f && (pickUpAllowed))
         {
             Pickup();
-            canUseKey = true;
         }
         
-        if (keyAllowed && Input.GetKey(KeyCode.E))
-        {
-            Count -= 1f * Time.deltaTime;
-        }
-        if (Count == 0f && (keyAllowed))
-        {
-            
-        }
-               
     }
 
     //COLLISION WITH ITEM
@@ -66,24 +49,13 @@ public class PlayerMechanics : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider collision)
-    {
-        if (collision.CompareTag("Door") && (canUseKey))
-        {
-            keyAllowed = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider collision)
-    {
-        if (collision.CompareTag("Door") && (canUseKey))
-        {
-            keyAllowed = false;
-        }
-    }
+ 
     //PICKUP REFERENCE
     private void Pickup()
     {
         Destroy(GameObject.Find("Key"));
-    } 
+    }
+
+  
 }
+

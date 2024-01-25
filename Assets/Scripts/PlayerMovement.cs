@@ -176,6 +176,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    //STAMINA RECHARGE
     private IEnumerator rechargeStamina()
     {
         yield return new WaitForSeconds(1f);
