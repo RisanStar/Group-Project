@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float FallMultiplier;
     public float jumMulti;
-    private float jumpingPower = 10f;
+    public float jumpingPower = 12f;
 
     private bool isTired;
     private bool isRunning;

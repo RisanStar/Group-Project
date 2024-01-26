@@ -24,7 +24,7 @@ public class PlayerMechanics : MonoBehaviour
             Count -= 1f * Time.deltaTime;
         }
             
-        if (Count <= 0f) { Count = 0f;}
+        if (Count <= 0f) {Count = 0f;}
         if (Count == 0f && (pickUpAllowed))
         {
             Pickup();
