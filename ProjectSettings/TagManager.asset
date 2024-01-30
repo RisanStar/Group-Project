@@ -9,6 +9,8 @@ TagManager:
   - Door
   - OneWay
   - OneWayLadder
+  - OneWayStair
+  - NextLevel
   layers:
   - Default
   - TransparentFX

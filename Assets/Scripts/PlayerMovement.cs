@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     private GameObject currentOneWayPlatform;
     private GameObject currentOneWayLadder;
+    private GameObject currentOneWayStair;
 
     //REFERENCES
     [SerializeField] private Rigidbody2D rb;
@@ -112,9 +113,18 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D))
         {
-            if (currentOneWayPlatform != null)
+            if (currentOneWayLadder != null)
             {
                 StartCoroutine(DisableCollisionLadder());
+            }
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D))
+        {
+            if (currentOneWayStair != null)
+            {
+                StartCoroutine(DisableCollisionStair());
             }
         }
     }
@@ -205,6 +215,10 @@ public class PlayerMovement : MonoBehaviour
         {
             currentOneWayLadder = collision.gameObject;
         }
+        if (collision.gameObject.CompareTag("OneWayStair"))
+        {
+            currentOneWayStair = collision.gameObject;
+        }
     }
 
 
@@ -220,7 +234,10 @@ public class PlayerMovement : MonoBehaviour
             currentOneWayLadder = null;
         }
 
-
+        if (collision.gameObject.CompareTag("OneWayStair"))
+        {
+            currentOneWayStair = null;
+        }
     }
 
 
@@ -240,17 +257,25 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        private IEnumerator DisableCollisionPlatform()
-        {
-            BoxCollider2D platformCollider = currentOneWayPlatform.GetComponent<BoxCollider2D>();
-            Physics2D.IgnoreCollision(playerCollider, platformCollider);
-            yield return new WaitForSeconds(0.25f);
-            Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
-        }
+    private IEnumerator DisableCollisionPlatform()
+    {
+        BoxCollider2D platformCollider = currentOneWayPlatform.GetComponent<BoxCollider2D>();
+        Physics2D.IgnoreCollision(playerCollider, platformCollider);
+        yield return new WaitForSeconds(0.25f);
+        Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
+    }
 
     private IEnumerator DisableCollisionLadder()
     {
         BoxCollider2D platformCollider = currentOneWayLadder.GetComponent<BoxCollider2D>();
+        Physics2D.IgnoreCollision(playerCollider, platformCollider);
+        yield return new WaitForSeconds(0.25f);
+        Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
+    }
+
+    private IEnumerator DisableCollisionStair()
+    {
+        BoxCollider2D platformCollider = currentOneWayStair.GetComponent<BoxCollider2D>();
         Physics2D.IgnoreCollision(playerCollider, platformCollider);
         yield return new WaitForSeconds(0.25f);
         Physics2D.IgnoreCollision(playerCollider, platformCollider, false);

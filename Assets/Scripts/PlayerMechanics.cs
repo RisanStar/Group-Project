@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class PlayerMechanics : MonoBehaviour
 
 {
@@ -29,7 +30,6 @@ public class PlayerMechanics : MonoBehaviour
         {
             Pickup();
         }
-        
     }
 
     //COLLISION WITH ITEM
