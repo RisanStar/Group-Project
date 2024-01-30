@@ -16,6 +16,7 @@ public class PlayerMechanics : MonoBehaviour
     void Start()
     {
         Count = Timer;
+
     }
     //PICKUP WITH E WITH TIMER
     private void Update()
@@ -30,6 +31,7 @@ public class PlayerMechanics : MonoBehaviour
         {
             Pickup();
         }
+
     }
 
     //COLLISION WITH ITEM
