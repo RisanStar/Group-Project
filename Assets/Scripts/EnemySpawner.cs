@@ -36,11 +36,8 @@ public class EnemySpawner : MonoBehaviour
         else
         {
             canSpawn = false;
-        }
+        }  
 
     }
-     
-
-
 
 }
