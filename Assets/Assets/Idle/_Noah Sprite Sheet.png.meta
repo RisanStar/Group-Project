@@ -139,19 +139,19 @@ TextureImporter:
       name: _Noah Sprite Sheet_0
       rect:
         serializedVersion: 2
-        x: 23
+        x: 24
         y: 0
         width: 93
         height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00623a6c760b1ef4995d2de817c533eb
-      internalID: 1099069643
+      spriteID: 52a82fb1c216a52449bd472d78b4fbc1
+      internalID: 976648670
       vertices: []
       indices: 
       edges: []
@@ -165,14 +165,14 @@ TextureImporter:
         width: 93
         height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2d8df40685c0e0429e6a8eee791e844
-      internalID: 1122955120
+      spriteID: 03a24c7b5b4b9f54db86ea77a8c12037
+      internalID: -193120634
       vertices: []
       indices: 
       edges: []
@@ -186,14 +186,14 @@ TextureImporter:
         width: 93
         height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7990dcb7736ef004d9d9461871d2d2e8
-      internalID: 11842474
+      spriteID: e8893321636263f4f80d91a1b1d7276b
+      internalID: 1670157016
       vertices: []
       indices: 
       edges: []
@@ -202,19 +202,19 @@ TextureImporter:
       name: _Noah Sprite Sheet_3
       rect:
         serializedVersion: 2
-        x: 297
+        x: 296
         y: 0
         width: 93
         height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8906c2267c29d1f4bb2344fdf3dd76ac
-      internalID: -1596427369
+      spriteID: f58814e67d0a4e6458a63c5f779f1504
+      internalID: 1329668490
       vertices: []
       indices: 
       edges: []
@@ -223,19 +223,19 @@ TextureImporter:
       name: _Noah Sprite Sheet_4
       rect:
         serializedVersion: 2
-        x: 386
+        x: 385
         y: 0
         width: 93
         height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbcb2a7bb9b12474d9446a18616eb39e
-      internalID: 313502563
+      spriteID: c432cf6e4d70a3148bafce2a7dd69886
+      internalID: 1937991
       vertices: []
       indices: 
       edges: []
@@ -244,19 +244,19 @@ TextureImporter:
       name: _Noah Sprite Sheet_5
       rect:
         serializedVersion: 2
-        x: 475
+        x: 476
         y: 0
         width: 93
         height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ca5b90ff91e997408ceeafc95d3b5be
-      internalID: -1425158316
+      spriteID: 27edff03f7201ce4a8a05fd91dce7ee2
+      internalID: 1190704558
       vertices: []
       indices: 
       edges: []
@@ -265,19 +265,19 @@ TextureImporter:
       name: _Noah Sprite Sheet_6
       rect:
         serializedVersion: 2
-        x: 565
+        x: 566
         y: 0
         width: 93
         height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dcc743af1679e542957cd166c22c2f3
-      internalID: 89096724
+      spriteID: d2c9bcc958c562748a72f4560b3e95a3
+      internalID: 1793088340
       vertices: []
       indices: 
       edges: []
@@ -286,19 +286,19 @@ TextureImporter:
       name: _Noah Sprite Sheet_7
       rect:
         serializedVersion: 2
-        x: 654
+        x: 658
         y: 0
-        width: 92.9375
+        width: 93
         height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a2be780718aaf54ab6fe9889cdb506e
-      internalID: 361801441
+      spriteID: 6f1d7c5158368a6428face9286c6c50d
+      internalID: -50361743
       vertices: []
       indices: 
       edges: []
@@ -307,19 +307,19 @@ TextureImporter:
       name: _Noah Sprite Sheet_8
       rect:
         serializedVersion: 2
-        x: 746
+        x: 745
         y: 0
-        width: 92.9375
+        width: 93
         height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f20c9741e1ac0d8409a3a9e0a2fb374d
-      internalID: 727388319
+      spriteID: 0a8fddb5178d61546a37f7d2b72b0ac9
+      internalID: -769914108
       vertices: []
       indices: 
       edges: []
@@ -328,19 +328,19 @@ TextureImporter:
       name: _Noah Sprite Sheet_9
       rect:
         serializedVersion: 2
-        x: 838
+        x: 836
         y: 0
-        width: 92.9375
+        width: 93
         height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfbcb821b57f906408714a69b909b6b5
-      internalID: 1701234207
+      spriteID: 14ce5330f7a5a6f48974953024ba461b
+      internalID: -946731992
       vertices: []
       indices: 
       edges: []
@@ -354,14 +354,14 @@ TextureImporter:
         width: 93
         height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad790b7451ad0b342a100620e6acc88e
-      internalID: 1509696971
+      spriteID: 29fa6cab62e7c9e4eab7c84841068166
+      internalID: 731583454
       vertices: []
       indices: 
       edges: []
@@ -370,19 +370,19 @@ TextureImporter:
       name: _Noah Sprite Sheet_11
       rect:
         serializedVersion: 2
-        x: 1018
+        x: 1017
         y: 0
         width: 93
         height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ba1e68de85b93644b4476247dc2b90f
-      internalID: 388908469
+      spriteID: 62707e19aa9ce50449d508b6b1d8dc89
+      internalID: 464326267
       vertices: []
       indices: 
       edges: []
@@ -391,19 +391,19 @@ TextureImporter:
       name: _Noah Sprite Sheet_12
       rect:
         serializedVersion: 2
-        x: 1104
+        x: 1105
         y: 0
         width: 93
         height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c146983938b3ce84ea92b651ac97716e
-      internalID: -417157405
+      spriteID: 382574773fb68d044a87103036a8f192
+      internalID: 703518851
       vertices: []
       indices: 
       edges: []
@@ -417,14 +417,14 @@ TextureImporter:
         width: 93
         height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fdecfd163189114cb675cbc83cdc1c2
-      internalID: 1916143407
+      spriteID: 21e1aed1957c32c48b97844f67d7240c
+      internalID: -1862121579
       vertices: []
       indices: 
       edges: []
@@ -433,19 +433,19 @@ TextureImporter:
       name: _Noah Sprite Sheet_14
       rect:
         serializedVersion: 2
-        x: 1290
+        x: 1286
         y: 0
         width: 93
         height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c92113463afae344dbb1c6f198b0a397
-      internalID: 1734896303
+      spriteID: 6bca21b080086d043ad91f1146bdbd84
+      internalID: 1241953181
       vertices: []
       indices: 
       edges: []
@@ -454,19 +454,19 @@ TextureImporter:
       name: _Noah Sprite Sheet_15
       rect:
         serializedVersion: 2
-        x: 1378
+        x: 1376
         y: 0
         width: 93
         height: 228
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d82da61f88655041a3ede86477a5fae
-      internalID: 1944956997
+      spriteID: 710cd6de1f2db0e43acb3b7982a17b2d
+      internalID: -1545734699
       vertices: []
       indices: 
       edges: []
@@ -482,22 +482,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      _Noah Sprite Sheet_0: 1099069643
-      _Noah Sprite Sheet_1: 1122955120
-      _Noah Sprite Sheet_10: 1509696971
-      _Noah Sprite Sheet_11: 388908469
-      _Noah Sprite Sheet_12: -417157405
-      _Noah Sprite Sheet_13: 1916143407
-      _Noah Sprite Sheet_14: 1734896303
-      _Noah Sprite Sheet_15: 1944956997
-      _Noah Sprite Sheet_2: 11842474
-      _Noah Sprite Sheet_3: -1596427369
-      _Noah Sprite Sheet_4: 313502563
-      _Noah Sprite Sheet_5: -1425158316
-      _Noah Sprite Sheet_6: 89096724
-      _Noah Sprite Sheet_7: 361801441
-      _Noah Sprite Sheet_8: 727388319
-      _Noah Sprite Sheet_9: 1701234207
+      _Noah Sprite Sheet_0: 976648670
+      _Noah Sprite Sheet_1: -193120634
+      _Noah Sprite Sheet_10: 731583454
+      _Noah Sprite Sheet_11: 464326267
+      _Noah Sprite Sheet_12: 703518851
+      _Noah Sprite Sheet_13: -1862121579
+      _Noah Sprite Sheet_14: 1241953181
+      _Noah Sprite Sheet_15: -1545734699
+      _Noah Sprite Sheet_2: 1670157016
+      _Noah Sprite Sheet_3: 1329668490
+      _Noah Sprite Sheet_4: 1937991
+      _Noah Sprite Sheet_5: 1190704558
+      _Noah Sprite Sheet_6: 1793088340
+      _Noah Sprite Sheet_7: -50361743
+      _Noah Sprite Sheet_8: -769914108
+      _Noah Sprite Sheet_9: -946731992
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
