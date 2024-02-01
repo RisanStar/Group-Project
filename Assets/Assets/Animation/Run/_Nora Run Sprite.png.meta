@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8c39be38a9bb75e4eaa6584711cbe67b
+guid: 49d66887b4410904d8438a1abec56f94
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,34 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: _Noah Run Sprite_0
+      name: _Nora Run Sprite_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 9
         y: 0
-        width: 179.5
-        height: 225
-      alignment: 9
-      pivot: {x: 0.523578, y: 0.49999997}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d18873604cc5c42489bcd2d9634557d3
-      internalID: 813547195
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: _Noah Run Sprite_1
-      rect:
-        serializedVersion: 2
-        x: 181
-        y: 0
-        width: 180
-        height: 225
+        width: 53
+        height: 208
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b1c2fec92461104aa5d41d823437a2f
-      internalID: -1235877596
+      spriteID: b9bc4c4990f26b54c9d0e827b743d798
+      internalID: 227479713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _Noah Run Sprite_2
+      name: _Nora Run Sprite_1
       rect:
         serializedVersion: 2
-        x: 361
+        x: 59
         y: 0
-        width: 180
-        height: 225
+        width: 53
+        height: 208
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5de76931afdb2714fb52c5b88c9907b6
-      internalID: -25619560
+      spriteID: ab7d0bf9ce1a02f4ab08864701152533
+      internalID: 1046028188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _Noah Run Sprite_3
+      name: _Nora Run Sprite_2
       rect:
         serializedVersion: 2
-        x: 541
+        x: 108
         y: 0
-        width: 180
-        height: 225
+        width: 53
+        height: 208
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ba643c5b768033469e5bf4e0c11fecd
-      internalID: 1826231517
+      spriteID: 9bf212676db182d4a83a402f83514222
+      internalID: -1345120191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _Noah Run Sprite_4
+      name: _Nora Run Sprite_3
       rect:
         serializedVersion: 2
-        x: 721
+        x: 159
         y: 0
-        width: 180
-        height: 225
+        width: 53
+        height: 208
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e547d9ade6c07344b23364e418b9834
-      internalID: -1400412952
+      spriteID: 50110220b8287524da037d0d91a50440
+      internalID: 222176826
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _Noah Run Sprite_5
+      name: _Nora Run Sprite_4
       rect:
         serializedVersion: 2
-        x: 897
+        x: 209
         y: 0
-        width: 180
-        height: 225
+        width: 53
+        height: 208
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,8 +234,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38e9f9ebc9a24ae459a34e0a38c87d80
-      internalID: 1873656545
+      spriteID: c61a5f0b03c075441b1267bbd3a86f1c
+      internalID: 96571188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Nora Run Sprite_5
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 52.833332
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 453f4e3a8a55863499d90f1717c2797c
+      internalID: -1401942832
       vertices: []
       indices: 
       edges: []
@@ -272,12 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      _Noah Run Sprite_0: 813547195
-      _Noah Run Sprite_1: -1235877596
-      _Noah Run Sprite_2: -25619560
-      _Noah Run Sprite_3: 1826231517
-      _Noah Run Sprite_4: -1400412952
-      _Noah Run Sprite_5: 1873656545
+      _Nora Run Sprite_0: 227479713
+      _Nora Run Sprite_1: 1046028188
+      _Nora Run Sprite_2: -1345120191
+      _Nora Run Sprite_3: 222176826
+      _Nora Run Sprite_4: 96571188
+      _Nora Run Sprite_5: -1401942832
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

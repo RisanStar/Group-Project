@@ -38,11 +38,14 @@ public class PlayerMovement : MonoBehaviour
     private GameObject currentOneWayLadder;
     private GameObject currentOneWayStair;
 
-    public KeyCode W;
-    public KeyCode A;
-    public KeyCode S;
-    public KeyCode D;
-    public KeyCode LeftShift;
+    //MULTIPLAYER
+    public KeyCode up;
+    public KeyCode left;
+    public KeyCode down;
+    public KeyCode right;
+    public KeyCode run;
+    public KeyCode jump;
+
 
     //REFERENCES
     [SerializeField] private Rigidbody2D rb;
@@ -50,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private BoxCollider2D playerCollider;
     [SerializeField] public Animator anim;
-
+    
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -63,14 +66,26 @@ public class PlayerMovement : MonoBehaviour
    
         //CALCULATING JUMPING INPUT
         vertical = Input.GetAxisRaw("Vertical");
-        if(Input.GetButtonDown("Jump") && IsGrounded() && !isClimbing)
+        if(Input.GetKeyDown(jump) && IsGrounded() && !isClimbing)
         {
+            anim.SetBool("Jumping", true);
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
-        if(Input.GetButtonUp("Jump") && rb.velocity.y > 0f && !isClimbing)
+        else
         {
+            anim.SetBool("Jumping", false);
+        }
+
+        if(Input.GetKeyDown(jump) && rb.velocity.y > 0f && !isClimbing)
+        {
+            anim.SetBool("Jumping", true);
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .5f);
         }
+        else
+        {
+            anim.SetBool("Jumping", false);
+        }
+
         if(rb.velocity.y < 0f && !isClimbing)
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplier - 1) * Time.deltaTime;
@@ -82,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isClimbing = true;
         }
-        if (isClimbing && (Input.GetKey(KeyCode.LeftShift)))
+        if (isClimbing && (Input.GetKey(run)))
         {
             isFastClimbing = true;
         }
@@ -92,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //CALCULATING RUNNING INPUT
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKey(run))
         {
             isRunning = true;
         }
@@ -119,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
             isTired = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.S))
+        if(Input.GetKeyDown(down))
         {
             if (currentOneWayPlatform != null)
             {
@@ -127,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(down) || Input.GetKeyDown(left) || Input.GetKeyDown(up) || Input.GetKeyDown(right))
         {
             if (currentOneWayLadder != null)
             {
@@ -136,7 +151,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(down) || Input.GetKeyDown(left) || Input.GetKeyDown(up) || Input.GetKeyDown(right))
         {
             if (currentOneWayStair != null)
             {
@@ -200,6 +215,11 @@ public class PlayerMovement : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, .2f, groundLayer);
+    }
+
+    public void OnLanding()
+    {
+        anim.SetBool("Jumping", false);
     }
 
     //CLIMBING COLLISIONS
