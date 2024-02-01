@@ -19,12 +19,8 @@ public class NewLevel : MonoBehaviour
         {
             nextLvlAllowed = false;
         }
-
-        if (GameObject.FindWithTag("Player") == null)
-        {
-            Restart();
-        }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if ((nextLvlAllowed && collision.CompareTag("Player")))

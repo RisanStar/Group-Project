@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de36df95790dbc64fb7c922a349f40b3
+guid: 1d33c1b9c4732ff4eb8a4b0d643fc156
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,7 +134,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: _Noah Run Sprite_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 179
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c92e08cbed5c846b5797b44311bc6d
+      internalID: -1623035366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Noah Run Sprite_1
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 0
+        width: 179
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db8e7fcd7b44e8e48811930f7e9ced50
+      internalID: 1686790433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Noah Run Sprite_2
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 0
+        width: 179
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a68d65545abbf4588dff0d2956e2f1
+      internalID: 586479102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Noah Run Sprite_3
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 0
+        width: 179
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c39c1d7184e0f4bbc432c78b524d7f
+      internalID: 2125060720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Noah Run Sprite_4
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 0
+        width: 179
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b070f0456b32314493add69553fd78b
+      internalID: -1436550124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Noah Run Sprite_5
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 0
+        width: 179
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd4de610e6d66c3418ee075817e0484c
+      internalID: -1512282935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +271,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      _Noah Run Sprite_0: -1623035366
+      _Noah Run Sprite_1: 1686790433
+      _Noah Run Sprite_2: 586479102
+      _Noah Run Sprite_3: 2125060720
+      _Noah Run Sprite_4: -1436550124
+      _Noah Run Sprite_5: -1512282935
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Security.Cryptography.X509Certificates;
 using UnityEditor.Search;
 using UnityEngine;
 public class PlayerMovement : MonoBehaviour
@@ -37,15 +38,30 @@ public class PlayerMovement : MonoBehaviour
     private GameObject currentOneWayLadder;
     private GameObject currentOneWayStair;
 
+    public KeyCode W;
+    public KeyCode A;
+    public KeyCode S;
+    public KeyCode D;
+    public KeyCode LeftShift;
+
     //REFERENCES
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private BoxCollider2D playerCollider;
+    [SerializeField] public Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
     private void Update()
     {
-        //CALCULATING JUMPING INPUT
+        //HORIZONTAL MOVEMENT
         horizontal = Input.GetAxisRaw("Horizontal");
+        anim.SetFloat("Speed", Mathf.Abs(horizontal));
+   
+        //CALCULATING JUMPING INPUT
         vertical = Input.GetAxisRaw("Vertical");
         if(Input.GetButtonDown("Jump") && IsGrounded() && !isClimbing)
         {

@@ -14,10 +14,8 @@ public class PlayerMechanics : MonoBehaviour
     public float Timer;
     private float Count = 0f;
 
-    private Rigidbody2D rb;
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         Count = Timer;
 
     }
@@ -58,12 +56,6 @@ public class PlayerMechanics : MonoBehaviour
     private void Pickup()
     {
         Destroy(GameObject.Find("Key"));
-    }
-
-  
-    private void Die()
-    {
-        rb.bodyType = RigidbodyType2D.Static;
     }
 }
 
