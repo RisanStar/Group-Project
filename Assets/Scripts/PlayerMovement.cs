@@ -4,18 +4,22 @@ using System.Linq.Expressions;
 using System.Security.Cryptography.X509Certificates;
 using UnityEditor.Search;
 using UnityEngine;
+using UnityEngine.Events;
 public class PlayerMovement : MonoBehaviour
 {
     //VARIABLES
+    //DIRECTION
     private float vertical;
     private float horizontal;
 
+    //SPEED
     public float climbingSpeed = 3f;
     public float speed = 4f;
     private float speedMulti = 1.5f;
     private float airSpeedMulti = 1.3f;
     private float climpingSpeedMulti = 1.2f;
 
+    //STAMINA
     public float maxStamina;
     public float stamina;
     public float runCost;
@@ -23,10 +27,18 @@ public class PlayerMovement : MonoBehaviour
     private Coroutine recharge;
     private float tiredMulti = .5f;
 
+    //JUMPING
     public float FallMultiplier;
     public float jumMulti;
     public float jumpingPower = 12f;
+    private float coyoteTime = 0.2f;
+    private float coyoteTimeCount;
+    private float jumpBufferTime = 0.2f;
+    private float jumpBufferCount;
+    public float animTime;
+    private float animCount = 0f;
 
+    //BOOLS
     private bool isTired;
     private bool isRunning;
     private bool isLadder;
@@ -34,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFastClimbing;
     private bool isFacingRight = true;
 
+    //GAMEOBJ
     private GameObject currentOneWayPlatform;
     private GameObject currentOneWayLadder;
     private GameObject currentOneWayStair;
@@ -53,10 +66,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private BoxCollider2D playerCollider;
     [SerializeField] public Animator anim;
-    
+
+    public UnityEvent OnLandEvent;
+    [System.Serializable]
+    public class BoolEvent: UnityEvent<bool>
+    {
+         
+    }
     private void Start()
     {
         anim = GetComponent<Animator>();
+        animCount = animTime;
     }
     private void Update()
     {
@@ -66,26 +86,40 @@ public class PlayerMovement : MonoBehaviour
    
         //CALCULATING JUMPING INPUT
         vertical = Input.GetAxisRaw("Vertical");
-        if(Input.GetKeyDown(jump) && IsGrounded() && !isClimbing)
+
+        if (IsGrounded())
         {
-            anim.SetBool("Jumping", true);
+            coyoteTimeCount = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCount -= Time.deltaTime;
+            animCount -= Time.deltaTime;
+        }
+
+        if (animCount <= 0f) { animCount = 0;}
+
+        if (Input.GetKeyDown(jump))
+        {
+            jumpBufferCount = jumpBufferTime;
+        }
+
+        if(jumpBufferCount > 0f && coyoteTimeCount > 0f && !isClimbing)
+        {
+            anim.SetBool("isJumping", true);
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            jumpBufferCount = 0f;
         }
-        else
-        {
-            anim.SetBool("Jumping", false);
-        }
+      
 
-        if(Input.GetKeyDown(jump) && rb.velocity.y > 0f && !isClimbing)
+        if(jumpBufferCount > 0f && rb.velocity.y > 0f && !isClimbing)
         {
-            anim.SetBool("Jumping", true);
+            anim.SetBool("isJumping", true);
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .5f);
-        }
-        else
-        {
-            anim.SetBool("Jumping", false);
+            coyoteTimeCount = 0f;
         }
 
+        //GRAVITY
         if(rb.velocity.y < 0f && !isClimbing)
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplier - 1) * Time.deltaTime;
@@ -160,7 +194,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     private void FixedUpdate()
     {
         //NORMAL SPEED
@@ -214,13 +247,9 @@ public class PlayerMovement : MonoBehaviour
     //GROUND CHECKER
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, .2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, .1f, groundLayer);
     }
 
-    public void OnLanding()
-    {
-        anim.SetBool("Jumping", false);
-    }
 
     //CLIMBING COLLISIONS
     private void OnTriggerEnter2D(Collider2D collision)

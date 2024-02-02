@@ -390,6 +390,7 @@ MonoBehaviour:
   FallMultiplier: 3
   jumMulti: 6
   jumpingPower: 12
+  animTime: 0
   up: 119
   left: 97
   down: 115
@@ -403,6 +404,21 @@ MonoBehaviour:
     m_Bits: 128
   playerCollider: {fileID: 61156250}
   anim: {fileID: 61156254}
+  OnLandEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 61156252}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &61156253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1247,7 +1263,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770603632}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.21, z: 0}
+  m_LocalPosition: {x: 0.03, y: -1.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1373,7 +1389,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852335650}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2340,7 +2356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1457861651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.199081, y: -2.71698, z: -12}
+  m_LocalPosition: {x: -1.9894018, y: -2.70294, z: -12}
   m_LocalScale: {x: 0.94697, y: 1.3020837, z: 0.94697}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2972,7 +2988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2052496178
 Transform:
   m_ObjectHideFlags: 0
@@ -3031,6 +3047,7 @@ MonoBehaviour:
   FallMultiplier: 3
   jumMulti: 6
   jumpingPower: 12
+  animTime: 0
   up: 273
   left: 276
   down: 274
@@ -3044,6 +3061,9 @@ MonoBehaviour:
     m_Bits: 128
   playerCollider: {fileID: 2052496182}
   anim: {fileID: 2052496179}
+  OnLandEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2052496181
 MonoBehaviour:
   m_ObjectHideFlags: 0
