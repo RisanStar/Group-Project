@@ -35,13 +35,12 @@ public class PlayerMovement : MonoBehaviour
     private float coyoteTimeCount;
     private float jumpBufferTime = 0.2f;
     private float jumpBufferCount;
-    public float animTime;
-    private float animCount = 0f;
 
     //BOOLS
     private bool isTired;
     private bool isRunning;
     private bool isLadder;
+    private bool isStair;
     private bool isClimbing;
     private bool isFastClimbing;
     private bool isFacingRight = true;
@@ -66,23 +65,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private BoxCollider2D playerCollider;
     [SerializeField] public Animator anim;
-
-    public UnityEvent OnLandEvent;
-    [System.Serializable]
-    public class BoolEvent: UnityEvent<bool>
-    {
-         
-    }
-    private void Start()
-    {
-        anim = GetComponent<Animator>();
-        animCount = animTime;
-    }
+    private enum MovementState { idle, running, jumping}
     private void Update()
     {
         //HORIZONTAL MOVEMENT
         horizontal = Input.GetAxisRaw("Horizontal");
-        anim.SetFloat("Speed", Mathf.Abs(horizontal));
    
         //CALCULATING JUMPING INPUT
         vertical = Input.GetAxisRaw("Vertical");
@@ -94,10 +81,8 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             coyoteTimeCount -= Time.deltaTime;
-            animCount -= Time.deltaTime;
         }
 
-        if (animCount <= 0f) { animCount = 0;}
 
         if (Input.GetKeyDown(jump))
         {
@@ -106,7 +91,6 @@ public class PlayerMovement : MonoBehaviour
 
         if(jumpBufferCount > 0f && coyoteTimeCount > 0f && !isClimbing)
         {
-            anim.SetBool("isJumping", true);
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             jumpBufferCount = 0f;
         }
@@ -114,7 +98,6 @@ public class PlayerMovement : MonoBehaviour
 
         if(jumpBufferCount > 0f && rb.velocity.y > 0f && !isClimbing)
         {
-            anim.SetBool("isJumping", true);
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .5f);
             coyoteTimeCount = 0f;
         }
@@ -192,6 +175,29 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(DisableCollisionStair());
             }
         }
+
+        UpdateAnimationStart();
+    }
+
+    //ANIMATION
+    private void UpdateAnimationStart()
+    {
+        MovementState state;
+        if (horizontal > 0f || horizontal < 0f)
+        {
+            state = MovementState.running;
+        }
+        else
+        {
+            state = MovementState.idle;
+        }
+
+        if (rb.velocity.y > .1f && !isClimbing && !isStair)
+        {
+            state = MovementState.jumping;
+        }
+
+        anim.SetInteger("state", (int)state);
     }
 
     private void FixedUpdate()
@@ -283,6 +289,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("OneWayStair"))
         {
             currentOneWayStair = collision.gameObject;
+            isStair = true;
         }
     }
 
@@ -302,6 +309,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("OneWayStair"))
         {
             currentOneWayStair = null;
+            isStair = false;
         }
     }
 
