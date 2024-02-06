@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using System.Security.Cryptography.X509Certificates;
 using UnityEditor.Search;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Events;
 public class PlayerMovement : MonoBehaviour
 {
@@ -65,7 +66,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private BoxCollider2D playerCollider;
     [SerializeField] public Animator anim;
+
     private enum MovementState { idle, running, jumping}
+
     private void Update()
     {
         //HORIZONTAL MOVEMENT
@@ -85,21 +88,22 @@ public class PlayerMovement : MonoBehaviour
 
 
         if (Input.GetKeyDown(jump))
+        
         {
-            jumpBufferCount = jumpBufferTime;
+                jumpBufferCount = jumpBufferTime;
         }
 
-        if(jumpBufferCount > 0f && coyoteTimeCount > 0f && !isClimbing)
+        if (jumpBufferCount > 0f && coyoteTimeCount > 0f && !isClimbing)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-            jumpBufferCount = 0f;
+                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+                jumpBufferCount = 0f;
         }
-      
 
-        if(jumpBufferCount > 0f && rb.velocity.y > 0f && !isClimbing)
+
+        if (jumpBufferCount > 0f && rb.velocity.y > 0f && !isClimbing)
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .5f);
-            coyoteTimeCount = 0f;
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .5f);
+                coyoteTimeCount = 0f;
         }
 
         //GRAVITY

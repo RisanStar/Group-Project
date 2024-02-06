@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 61156253}
   - component: {fileID: 61156252}
   - component: {fileID: 61156254}
+  - component: {fileID: 61156255}
   m_Layer: 6
   m_Name: Noah
   m_TagString: Player
@@ -437,6 +438,56 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &61156255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61156247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: eb1574b79dfb9ac479e65af85c5a7f6c, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b2a68e02-3c34-484d-a843-2f38f47cd347
+    m_ActionName: Noah/MoveUp[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 44f08c43-39ae-4a44-bb60-e4ecac8c40ec
+    m_ActionName: Noah/MoveLeft[/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3c23da4f-eebd-4015-85dc-87d60b985317
+    m_ActionName: Noah/MoveRight[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 019a161c-352c-45e4-ad96-75705953e6e7
+    m_ActionName: Noah/MoveDown[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 989831ab-fc71-477b-80df-1415c5e32a3e
+    m_ActionName: Noah/Jump[/Keyboard/space]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Noah
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &262766416
 GameObject:
   m_ObjectHideFlags: 0
@@ -2281,7 +2332,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3d6dc1f7f72ba42828fa60d16322ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeathTimer: 20
+  DeathTimer: 1
+  speed: 5
+  distanceBetween: 10
   enemyPrefab: {fileID: 8637445158929477161, guid: 883d6619750511d48ab59f11f4fa45d3, type: 3}
 --- !u!1 &1457861651
 GameObject:
@@ -2369,7 +2422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1457861651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.0818567, y: -2.7050705, z: -12}
+  m_LocalPosition: {x: -1.9894018, y: -2.70294, z: -12}
   m_LocalScale: {x: 0.94697, y: 1.3020837, z: 0.94697}
   m_ConstrainProportionsScale: 0
   m_Children: []
