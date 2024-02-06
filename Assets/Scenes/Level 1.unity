@@ -552,6 +552,93 @@ Transform:
   m_Father: {fileID: 1942228354}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &306449941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 306449943}
+  - component: {fileID: 306449942}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &306449942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306449941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  data:
+    dataString: UEsDBBQAAAgIAAAAIewcRYA9dAIAAC4FAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMty2jAU/RVG65oxJi5Jd61DSBdJmNBONt4I6xprkCWPHgGS4d97JdvYJSsu59zHuQ/5k3BpGiis0ivN2ZNiQH5MiLfJt8lAPsKR7pTc8A/ofd44s5V3osHnlVquEJ/5MKNqsJoXP+VOeOcYQSd5qXS9ZDvIlLEG4ZIKA0hpZX20ROhzQo74E935kBNaycJbH2jdxZMzmgVIC3pw7R2jxXSWJmm6mC+WUbzogqL5NE3TOE6W0ewmxDtZCFo3wHwzQ5r5bV8wCW4S2+w8fEuFEoKbTiOxpybMIKONcdghOjBOsecgbDadI1AB31XWJxyHv5SlAdvJ1vR0zzUOr81Lfql2ojU1+1bZOxUuSEhug6o26dMXPpoFutSqfuzrzmJfw1a82L/SU0GNHY18DN+PpIcBHajY062Atwrks1pp5SRD0mrnQ52B5H74e2ktq6DYD3gr9Qp0zdfF9fv1PZxD98dM8HrrqelNC2yEChMPZwEad/MbBYejMV0KRL2Kvwb+0N34ujrigWtjkeq6lF7eVjntXckyzMx342ymtIQAd6IbkFTY0xrT2OsVXnGjslfMA/XvqCvecf3zuAoJ8OAfx1fUWh0uyzKVOjyBqV6cFVzCINoTzzinTEnZXth4Jn3YxumSFqOwnePs/9MicZmW3+lNOafbkm3j26iAmC4gLdO7LTCAhITb4xL7pGLdCu3Gg1uTQ3KJd9Z/XiYrTZtw7UzTw4p/1Go0ci5LtSk0gHxpM1yEg8Yi+C7ZknEc0Aas5TLsm3zmRKhiDyy/JMpDp8uj1TQfsuSk4e/KeiQnWfie5MTDl1tea3jncPDF+2Rncv4HUEsDBBQAAAgIAAAAIey6mkZgbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSQZppmlmiSZpxYlJaSpKBhW5yqkGieappmqllUmpKaqqRUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAAIewcRYA9dAIAAC4FAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAAIey6mkZgbQAAAHgAAAAJACQAAAAAAAAAAAAAAMECAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAeQMAAAAA
+    upgradeData: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 1
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _AreaColors:
+    - {r: 0, g: 0, b: 0, a: 0}
+  tagNames: []
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 1
+  maxFrameTime: 1
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
+--- !u!4 &306449943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306449941}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8833704, y: -0.08090477, z: 0.028291766}
+  m_LocalScale: {x: 1.495, y: 1.495, z: 1.495}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &339186251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,7 +1885,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 921729579}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2016,7 +2103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1104322775}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Balconies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2335,7 +2422,7 @@ MonoBehaviour:
   DeathTimer: 1
   speed: 5
   distanceBetween: 10
-  enemyPrefab: {fileID: 8637445158929477161, guid: 883d6619750511d48ab59f11f4fa45d3, type: 3}
+  enemyPrefab: {fileID: 666262825086611930, guid: ed6cb8c72e137ec43a3f52e8925b7e14, type: 3}
 --- !u!1 &1457861651
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,7 +2509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1457861651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9894018, y: -2.70294, z: -12}
+  m_LocalPosition: {x: -4.8687344, y: -2.7085495, z: -12}
   m_LocalScale: {x: 0.94697, y: 1.3020837, z: 0.94697}
   m_ConstrainProportionsScale: 0
   m_Children: []
