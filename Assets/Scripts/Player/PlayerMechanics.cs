@@ -16,10 +16,13 @@ public class PlayerMechanics : MonoBehaviour
     private float Count = 0f;
 
     [SerializeField] TextMeshProUGUI countTMPUGUI;
+    [SerializeField] Canvas canvas;
 
     void Start()
     {
         Count = Timer;
+        countTMPUGUI.enabled = false;
+        canvas.enabled = false;
 
     }
     //PICKUP WITH E WITH TIMER
@@ -45,7 +48,8 @@ public class PlayerMechanics : MonoBehaviour
         if (collision.CompareTag("Key"))
         {
             pickUpAllowed = true;
-            countTMPUGUI.text
+            countTMPUGUI.enabled = true;
+            canvas.enabled = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -53,6 +57,8 @@ public class PlayerMechanics : MonoBehaviour
         if (collision.CompareTag("Key"))
         {
             pickUpAllowed = false;
+            countTMPUGUI.enabled = false;
+            canvas.enabled = false;
         }
     }
 
