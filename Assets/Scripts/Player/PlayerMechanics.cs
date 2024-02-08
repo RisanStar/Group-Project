@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +15,8 @@ public class PlayerMechanics : MonoBehaviour
     public float Timer;
     private float Count = 0f;
 
+    [SerializeField] TextMeshProUGUI countTMPUGUI;
+
     void Start()
     {
         Count = Timer;
@@ -25,6 +28,7 @@ public class PlayerMechanics : MonoBehaviour
         if (pickUpAllowed && Input.GetKey(KeyCode.E))
         {
             Count -= 1f * Time.deltaTime;
+
         }
             
         if (Count <= 0f) {Count = 0f;}
@@ -41,6 +45,7 @@ public class PlayerMechanics : MonoBehaviour
         if (collision.CompareTag("Key"))
         {
             pickUpAllowed = true;
+            countTMPUGUI.text
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private BoxCollider2D playerCollider;
     [SerializeField] public Animator anim;
 
-    private enum MovementState { idle, running, jumping}
+    private enum MovementState { idle, running, jumping, climbing}
 
     private void Update()
     {
@@ -196,9 +196,14 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.idle;
         }
 
-        if (rb.velocity.y > .1f && !isClimbing && !isStair)
+        if (rb.velocity.y > .2f && !isClimbing && !isStair)
         {
             state = MovementState.jumping;
+        }
+
+        if (isClimbing)
+        {
+            state = MovementState.climbing;
         }
 
         anim.SetInteger("state", (int)state);
@@ -257,7 +262,7 @@ public class PlayerMovement : MonoBehaviour
     //GROUND CHECKER
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, .1f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, .2f, groundLayer);
     }
 
 
