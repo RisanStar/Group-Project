@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     private float coyoteTimeCount;
     private float jumpBufferTime = 0.2f;
     private float jumpBufferCount;
+    private int Land = 0;
 
     //BOOLS
     private bool isTired;
@@ -45,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isClimbing;
     private bool isFastClimbing;
     private bool isFacingRight = true;
+    private bool grounded;
 
     //GAMEOBJ
     private GameObject currentOneWayPlatform;
@@ -67,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private BoxCollider2D playerCollider;
     [SerializeField] public Animator anim;
 
-    private enum MovementState { idle, running, jumping, climbing}
+    private enum MovementState { idle, running, jumping, climbing, landing}
 
     private void Update()
     {
@@ -80,10 +82,12 @@ public class PlayerMovement : MonoBehaviour
         if (IsGrounded())
         {
             coyoteTimeCount = coyoteTime;
+            grounded = true;
         }
         else
         {
             coyoteTimeCount -= Time.deltaTime;
+            grounded = false;
         }
 
 
@@ -187,11 +191,11 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateAnimationStart()
     {
         MovementState state;
-        if (horizontal > 0f || horizontal < 0f)
+        if (horizontal > 0f || horizontal < 0f && grounded)
         {
             state = MovementState.running;
         }
-        else
+        else 
         {
             state = MovementState.idle;
         }
@@ -199,6 +203,13 @@ public class PlayerMovement : MonoBehaviour
         if (rb.velocity.y > .2f && !isClimbing && !isStair)
         {
             state = MovementState.jumping;
+            Land++;
+        }
+
+        if (Land == 1 && !grounded && !isClimbing && !isStair)
+        {
+            state = MovementState.landing;
+            Land--;
         }
 
         if (isClimbing)

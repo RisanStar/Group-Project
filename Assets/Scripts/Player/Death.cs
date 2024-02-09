@@ -16,11 +16,16 @@ public class Death : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Die();
-          
+            Restart();
         }
     }
     private void Die()
     {
         rb.bodyType = RigidbodyType2D.Static;
+    }
+
+    private void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
