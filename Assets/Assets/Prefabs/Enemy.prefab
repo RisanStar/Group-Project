@@ -156,7 +156,7 @@ MonoBehaviour:
   radius: 10
   height: 2
   canMove: 1
-  maxSpeed: 15
+  maxSpeed: 10
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
