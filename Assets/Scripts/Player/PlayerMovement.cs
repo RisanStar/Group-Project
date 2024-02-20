@@ -6,6 +6,8 @@ using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using UnityEngine.UI;
+
 public class PlayerMovement : MonoBehaviour
 {
     //VARIABLES
@@ -27,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     public float chargeRate;
     private Coroutine recharge;
     private float tiredMulti = .5f;
+    public Image staminaBar;
 
     //JUMPING
     public float FallMultiplier;
@@ -144,13 +147,13 @@ public class PlayerMovement : MonoBehaviour
         //STAMINA
         if((isRunning && !isFastClimbing))
         {
+            staminaBar.fillAmount = stamina / maxStamina;
             stamina -= runCost * Time.deltaTime;
             if (recharge != null) StopCoroutine(recharge);
             recharge = StartCoroutine(rechargeStamina());
         }
         if (stamina < 0) stamina = 0;
         if (stamina == 0)
-        //stamina fill amount should go here
         {
             isTired = true;
         }
@@ -345,7 +348,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 stamina += chargeRate / 10f;
                 if (stamina > maxStamina) stamina = maxStamina;
-                //stamina fill amount should go here
+                staminaBar.fillAmount = stamina / maxStamina;
                 yield return new WaitForSeconds(.1f);
             }
         }
