@@ -11,7 +11,6 @@ public class PlayerMechanics : MonoBehaviour
 {
     //VARIABLES
     private bool pickUpAllowed;
-    private bool buttondown;
     public float Timer;
     private float Count = 0f;
 
@@ -66,7 +65,7 @@ public class PlayerMechanics : MonoBehaviour
     //PICKUP REFERENCE
     private void Pickup()
     {
-        Destroy(GameObject.Find("Key"));
+        Destroy(GameObject.FindWithTag("Key"));
     }
 }
 
