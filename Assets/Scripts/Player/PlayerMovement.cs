@@ -70,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private BoxCollider2D playerCollider;
+    [SerializeField] private PolygonCollider2D playerColl;
     [SerializeField] public Animator anim;
 
     private enum MovementState { idle, running, jumping, climbing, landing}
