@@ -5,8 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-  public void PlayGame()
+    //private GameObject StartOn;
+    //private GameObject StartOff;
+
+    private void Start()
     {
+        //StartOff = GameObject.Find("StartButtonOff");
+        //StartOn = GameObject.Find("StartButton");
+    }
+    public void PlayGame()
+    {
+        //StartOff.SetActive(false);
+        //StartOn.SetActive(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void GoToMenu()
@@ -14,12 +24,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void GoToSettings()
+    public void GoToControls()
     {
-        SceneManager.LoadScene("Settings");
+        SceneManager.LoadScene("Controls");
     }
-    public void QuitGame()
+    public void GoToCredits()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Credits");
     }
 }
