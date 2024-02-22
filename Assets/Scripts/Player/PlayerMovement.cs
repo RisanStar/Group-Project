@@ -12,8 +12,11 @@ public class PlayerMovement : MonoBehaviour
 {
     //VARIABLES
     //DIRECTION
+   //private float horizontal_;
+   //private float vertical_;
     private float vertical;
     private float horizontal;
+
 
     //SPEED
     public float climbingSpeed = 3f;
@@ -39,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
     private float coyoteTimeCount;
     private float jumpBufferTime = 0.2f;
     private float jumpBufferCount;
-    private int Land = 0;
 
     //BOOLS
     private bool isTired;
@@ -79,9 +81,11 @@ public class PlayerMovement : MonoBehaviour
     {
         //HORIZONTAL MOVEMENT
         horizontal = Input.GetAxisRaw("Horizontal");
+        //horizontal_ = Input.GetAxisRaw("Horizontal 2");
    
         //CALCULATING JUMPING INPUT
         vertical = Input.GetAxisRaw("Vertical");
+        //vertical_ = Input.GetAxisRaw("Vertical2# 2");
 
         if (IsGrounded())
         {
@@ -122,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
         Flip();
 
         //CALCULATING CLIMBING INPUT
-        if(isLadder && Mathf.Abs(vertical) > 0f)
+        if(isLadder && Mathf.Abs(vertical) > 0f) //|| Mathf.Abs(vertical_) > 0f)
         {
             isClimbing = true;
         }
@@ -207,13 +211,6 @@ public class PlayerMovement : MonoBehaviour
         if (rb.velocity.y > .2f && !isClimbing && !isStair)
         {
             state = MovementState.jumping;
-            Land++;
-        }
-
-        if (Land == 1 && !grounded && !isClimbing && !isStair)
-        {
-            state = MovementState.landing;
-            Land--;
         }
 
         if (isClimbing)
