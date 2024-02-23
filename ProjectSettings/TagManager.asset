@@ -12,6 +12,7 @@ TagManager:
   - OneWayStair
   - NextLevel
   - Enemy
+  - LaunchPoint
   layers:
   - Default
   - TransparentFX

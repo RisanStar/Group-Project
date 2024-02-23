@@ -11,18 +11,29 @@ public class PlayerMechanics : MonoBehaviour
 {
     //VARIABLES
     private bool pickUpAllowed;
+    private bool canLaunch;
+
+    public float speed;
+    public float verticalStrength;
     public float Timer;
     private float Count = 0f;
 
     [SerializeField] TextMeshProUGUI countTMPUGUI;
     [SerializeField] Canvas canvas;
+    [SerializeField] Rigidbody2D rb;
+    [SerializeField] GameObject vent;
+    [SerializeField] GameObject vent2;
+    [SerializeField] GameObject vent3;
+
 
     void Start()
     {
         Count = Timer;
         countTMPUGUI.enabled = false;
         canvas.enabled = false;
-
+        vent.SetActive(false);
+        vent2.SetActive(false);
+        vent3.SetActive(false);
     }
     //PICKUP WITH E WITH TIMER
     private void Update()
@@ -39,6 +50,19 @@ public class PlayerMechanics : MonoBehaviour
             Pickup();
         }
 
+            if (GameObject.FindWithTag("Key") == null)
+            {
+                vent.SetActive(true);
+                vent2.SetActive(true);
+                vent3.SetActive(true);
+
+            if (canLaunch)
+            {
+                transform.position += Vector3.up * verticalStrength * speed;
+            }
+
+    }
+
     }
 
     //COLLISION WITH ITEM
@@ -50,6 +74,11 @@ public class PlayerMechanics : MonoBehaviour
             countTMPUGUI.enabled = true;
             canvas.enabled = true;
         }
+
+        if (collision.CompareTag("LaunchPoint"))
+        {
+            canLaunch = true;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -59,9 +88,12 @@ public class PlayerMechanics : MonoBehaviour
             countTMPUGUI.enabled = false;
             canvas.enabled = false;
         }
+
+        if (collision.CompareTag("LaunchPoint"))
+        {
+            canLaunch = false;
+        }
     }
-
-
     //PICKUP REFERENCE
     private void Pickup()
     {
