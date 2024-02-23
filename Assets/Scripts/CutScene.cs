@@ -12,9 +12,8 @@ public class CutScene : MonoBehaviour
     private void Start()
     {
         Count = Timer;
-        Level();
     }
-    private void Level()
+    private void Update()
     {
         cutScene = true; 
         if (cutScene)

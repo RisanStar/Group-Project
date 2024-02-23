@@ -25,7 +25,7 @@ public class NewLevel : MonoBehaviour
     {
         if ((nextLvlAllowed && collision.CompareTag("Player")))
         {
-            SceneManager.LoadScene(sceneManagerIndex, LoadSceneMode.Single);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
     
