@@ -5,23 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class CutScene : MonoBehaviour
 {
-    private bool cutScene;
-    public float Timer;
-    private float Count = 0f;
+    public float sceneTime;
 
-    private void Start()
+   private void Update()
     {
-        Count = Timer;
-    }
-    private void Update()
-    {
-        cutScene = true; 
-        if (cutScene)
-        {
-            Count -= 1f * Time.deltaTime;
-        }
-        if (Count <= 0f) { Count = 0f; }
-        if (Count == 0f)
+       sceneTime -= Time.deltaTime;
+        if(sceneTime <= 0)
         {
             SceneManager.LoadScene("Level 1");
         }
