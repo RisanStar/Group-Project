@@ -9,6 +9,13 @@ public class NewLevel : MonoBehaviour
     public int sceneManagerIndex;
     private bool nextLvlAllowed;
 
+    [SerializeField] private GameObject startTrans;
+    [SerializeField] private GameObject endTrans;
+
+    private void Start()
+    {
+        startTrans.SetActive(true);
+    }
     private void Update()
     {
         if (GameObject.FindWithTag("Key") == null)

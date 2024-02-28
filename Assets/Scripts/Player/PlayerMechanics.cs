@@ -24,6 +24,7 @@ public class PlayerMechanics : MonoBehaviour
     [SerializeField] GameObject vent;
     [SerializeField] GameObject vent2;
     [SerializeField] GameObject vent3;
+    [SerializeField] private AudioSource keySFX;
 
 
     void Start()
@@ -41,6 +42,7 @@ public class PlayerMechanics : MonoBehaviour
         if (pickUpAllowed && Input.GetKey(KeyCode.E))
         {
             Count -= 1f * Time.deltaTime;
+            keySFX.Play();
 
         }
             
