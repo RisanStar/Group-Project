@@ -74,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private BoxCollider2D playerCollider;
     [SerializeField] private PolygonCollider2D playerColl;
     [SerializeField] public Animator anim;
+    [SerializeField] private AudioSource jumpSFX;
 
     private enum MovementState { idle, running, jumping, climbing, landing}
 
@@ -100,9 +101,9 @@ public class PlayerMovement : MonoBehaviour
 
 
         if (Input.GetKeyDown(jump))
-        
         {
-                jumpBufferCount = jumpBufferTime;
+            jumpBufferCount = jumpBufferTime;
+            jumpSFX.Play();
         }
 
         if (jumpBufferCount > 0f && coyoteTimeCount > 0f && !isClimbing)
