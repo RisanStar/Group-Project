@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class Death : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
+    public Animator transition;
+    public float transitionTime = 1f;
 
     private void Start()
     {
@@ -26,6 +28,14 @@ public class Death : MonoBehaviour
 
     private void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().name));
+
     }
+    IEnumerator LoadLevel(string levelIndex)
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(levelIndex);
+    }
+
 }
