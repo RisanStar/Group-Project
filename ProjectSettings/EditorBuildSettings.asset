@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 4.unity
     guid: ef3c404bf739ac1449c1fadfb7eb2c26
   - enabled: 1
+    path: Assets/Scenes/EndCutscene.unity
+    guid: 374a632dc3327f641a6edce67c6d4d24
+  - enabled: 1
     path: Assets/Scenes/Controls.unity
     guid: e4da0a2cc76b8644dbb39a9505f0b3db
   - enabled: 1
